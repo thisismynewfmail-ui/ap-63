@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0e17" />
+<title>Prediction Market — Genies Speculation Market</title>
+<link rel="icon" href="/club.svg" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/games.css" />
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+
+<main class="game-shell">
+  <a class="game-back" href="/">← Back to the floor</a>
+  <div class="game-header">
+    <span class="gh-icon">📈</span>
+    <div><h1>Prediction Market</h1></div>
+  </div>
+  <p class="game-sub">Buy YES or NO on a live contract. Take the long odds for a bigger payout — the market is the house.</p>
+
+  <div class="stage">
+    <span class="pill pill-live"><span class="dot"></span> Contract live</span>
+    <div class="market-q" id="question">Loading contract…</div>
+    <canvas class="market-chart" id="chart" width="680" height="90"></canvas>
+    <div class="market-prob">
+      <div class="prob-bar">
+        <div class="prob-yes" id="probYes" style="width:60%">YES 60%</div>
+        <div class="prob-no" id="probNo">NO 40%</div>
+      </div>
+    </div>
+    <div class="result-line" id="result">Pick a side and buy in.</div>
+  </div>
+
+  <div class="market-side" style="margin-bottom:16px">
+    <button class="side-btn yes sel" id="sideYes">
+      Buy YES<br><small style="font-weight:700" id="yesPay">1.62×</small>
+    </button>
+    <button class="side-btn no" id="sideNo">
+      Buy NO<br><small style="font-weight:700" id="noPay">2.42×</small>
+    </button>
+  </div>
+
+  <div id="wagerMount"></div>
+</main>
+
+<script src="/js/app.js"></script>
+<script src="/js/game-shell.js"></script>
+<script src="/js/games/market.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0e17" />
+<title>Lucky Flip — Genies Speculation Market</title>
+<link rel="icon" href="/club.svg" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/games.css" />
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+
+<main class="game-shell">
+  <a class="game-back" href="/">← Back to the floor</a>
+  <div class="game-header">
+    <span class="gh-icon">🪙</span>
+    <div><h1>Lucky Flip</h1></div>
+  </div>
+  <p class="game-sub">Heads or tails. Call it right and double your stake. The fastest wager on the floor.</p>
+
+  <div class="stage">
+    <div class="coin3d" id="coin">
+      <div class="face front">H</div>
+      <div class="face back">T</div>
+    </div>
+    <div class="result-line" id="result">Pick a side, set your wager, and flip.</div>
+  </div>
+
+  <div class="pick-row" style="margin-bottom:18px">
+    <button class="pick-btn sel" data-side="H" id="pickH">Heads</button>
+    <button class="pick-btn" data-side="T" id="pickT">Tails</button>
+  </div>
+
+  <div id="wagerMount"></div>
+
+  <div class="mini-stats">
+    <div class="mini-stat"><div class="k">Win chance</div><div class="v">50%</div></div>
+    <div class="mini-stat"><div class="k">Payout</div><div class="v gold-text">1.96×</div></div>
+    <div class="mini-stat"><div class="k">Session streak</div><div class="v" id="streak">0</div></div>
+  </div>
+</main>
+
+<script src="/js/app.js"></script>
+<script src="/js/game-shell.js"></script>
+<script src="/js/games/flip.js"></script>
+</body>
+</html>

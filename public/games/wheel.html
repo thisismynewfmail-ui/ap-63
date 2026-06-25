@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0e17" />
+<title>Fortune Wheel — Genies Speculation Market</title>
+<link rel="icon" href="/club.svg" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/games.css" />
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+
+<main class="game-shell">
+  <a class="game-back" href="/">← Back to the floor</a>
+  <div class="game-header">
+    <span class="gh-icon">🎡</span>
+    <div><h1>Fortune Wheel</h1></div>
+  </div>
+  <p class="game-sub">One spin, one multiplier. Most wedges pay — but land the gold <b class="gold-text">8×</b> for the blowout.</p>
+
+  <div class="stage">
+    <div class="wheel-wrap">
+      <div class="wheel-pointer">🔻</div>
+      <canvas class="wheel" id="wheel" width="520" height="520"></canvas>
+      <div class="wheel-center">🧞</div>
+    </div>
+    <div class="result-line" id="result">Set your wager and spin.</div>
+  </div>
+
+  <div id="wagerMount"></div>
+
+  <div class="mini-stats">
+    <div class="mini-stat"><div class="k">Top prize</div><div class="v gold-text">8×</div></div>
+    <div class="mini-stat"><div class="k">Any-win chance</div><div class="v win-text">50%</div></div>
+    <div class="mini-stat"><div class="k">Last spin</div><div class="v" id="lastSpin">—</div></div>
+  </div>
+</main>
+
+<script src="/js/app.js"></script>
+<script src="/js/game-shell.js"></script>
+<script src="/js/games/wheel.js"></script>
+</body>
+</html>

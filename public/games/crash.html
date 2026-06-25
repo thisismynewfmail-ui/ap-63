@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0e17" />
+<title>Genie Crash — Genies Speculation Market</title>
+<link rel="icon" href="/club.svg" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/games.css" />
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+
+<main class="game-shell">
+  <a class="game-back" href="/">← Back to the floor</a>
+  <div class="game-header">
+    <span class="gh-icon">🚀</span>
+    <div><h1>Genie Crash</h1></div>
+  </div>
+  <p class="game-sub">The multiplier climbs the moment you launch. Cash out before the genie vanishes — greed busts you.</p>
+
+  <div class="stage">
+    <canvas class="crash-canvas" id="canvas" width="700" height="170"></canvas>
+    <div class="crash-mult" id="mult">1.00×</div>
+    <div class="result-line" id="result">Set your wager and launch.</div>
+    <div class="crash-hist" id="hist"></div>
+  </div>
+
+  <div class="row" style="gap:10px;margin-bottom:14px">
+    <div class="mini-stat" style="flex:1">
+      <div class="k">Auto cash-out at</div>
+      <div class="row" style="gap:6px;align-items:center">
+        <input type="number" id="autoCash" class="bet-input" style="font-size:1rem;padding:9px 11px" value="2.00" min="1.01" step="0.1" />
+        <span class="gold-text" style="font-weight:900">×</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="wagerMount"></div>
+</main>
+
+<script src="/js/app.js"></script>
+<script src="/js/game-shell.js"></script>
+<script src="/js/games/crash.js"></script>
+</body>
+</html>

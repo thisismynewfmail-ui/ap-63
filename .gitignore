@@ -1,0 +1,7 @@
+node_modules/
+*.log
+data/accounts.json.tmp
+
+# Local account/points data is machine-local. A clean seed is committed; the
+# live file is rewritten as people play. Uncomment to keep it out of git:
+# data/accounts.json

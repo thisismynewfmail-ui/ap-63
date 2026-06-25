@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0e17" />
+<title>Genies Speculation Market — Play-Money Prediction & Chance Games</title>
+<meta name="description" content="A local play-money speculation market simulator. Trade predictions, flip, roll, spin and ride the crash — all with virtual Genies Gold." />
+<link rel="icon" href="/club.svg" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/lobby.css" />
+</head>
+<body>
+
+<!-- ============================== TOP BAR ============================== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">
+      <img src="/club.svg" alt="" />
+      <div>
+        <b>Genies <span>Speculation</span></b>
+        <small>Play-money market sim</small>
+      </div>
+    </a>
+    <div class="topbar-spacer"></div>
+
+    <div class="balance-chip" data-balance data-value="0" title="Your Genies Gold">
+      <span class="coin">🪙</span><span data-balance-num>—</span>
+    </div>
+
+    <div class="row" data-guest-actions>
+      <button class="btn btn-ghost" id="loginBtn">Log in</button>
+      <button class="btn btn-gold pulse" id="signupBtn">Play free</button>
+    </div>
+
+    <div class="user-menu hidden" data-user-actions>
+      <div class="avatar" data-avatar>?</div>
+      <button class="btn btn-ghost" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero wrap">
+  <div class="hero-copy">
+    <span class="pill pill-live"><span class="dot"></span> <span id="livePlayers">1,284</span> speculators online now</span>
+    <h1>Predict it. Trade it. <span class="grad">Ride the swing.</span></h1>
+    <p class="lede">
+      The local speculation-market simulator built for fans of the markets — five fast,
+      mobile-friendly games powered entirely by <b class="gold-text">Genies Gold</b>,
+      our free play-money. Build a streak, climb the board, chase the swing.
+    </p>
+    <div class="hero-cta">
+      <button class="btn btn-gold btn-lg pulse" id="heroPlay">🎁 Claim 1,000 Gold &amp; play</button>
+      <a class="btn btn-ghost btn-lg" href="#games">Browse games</a>
+    </div>
+    <div class="hero-trust">
+      <span>✔ No real money</span><span>✔ Instant local accounts</span><span>✔ Free daily top-ups</span>
+    </div>
+  </div>
+
+  <!-- live activity feed = social proof, anchored in the F-pattern's right rail -->
+  <aside class="activity card" aria-label="Live activity">
+    <div class="activity-head">
+      <span class="pill pill-hot">🔥 Live wins</span>
+      <span class="faint" style="font-size:.75rem">updating…</span>
+    </div>
+    <ul id="activityFeed" class="activity-list"></ul>
+  </aside>
+</section>
+
+<!-- ============================== DAILY BONUS STRIP ============================== -->
+<section class="wrap">
+  <div class="daily card" id="dailyStrip">
+    <div class="daily-left">
+      <div class="daily-icon">🎁</div>
+      <div>
+        <b>Daily Gold drop</b>
+        <div class="faint" id="dailyMsg">Log in to claim a free <span class="gold-text">+250 Gold</span> top-up.</div>
+      </div>
+    </div>
+    <button class="btn btn-gold" id="dailyBtn">Claim +250</button>
+  </div>
+</section>
+
+<!-- ============================== GAMES ============================== -->
+<section class="wrap" id="games">
+  <div class="section-head">
+    <h2>The Floor</h2>
+    <p class="muted">Five ways to speculate. Two clicks to your first wager.</p>
+  </div>
+  <div class="game-grid" id="gameGrid"></div>
+</section>
+
+<!-- ============================== GENIES GOLD / PROGRESSION ============================== -->
+<section class="wrap">
+  <div class="tier card" id="tierCard">
+    <div class="tier-head">
+      <div>
+        <span class="pill pill-new">Genies Gold System</span>
+        <h3 id="tierName">Sign in to start your climb</h3>
+      </div>
+      <div class="tier-balance">
+        <span class="faint">Balance</span>
+        <div class="bigfig gold-text" id="tierBalance">—</div>
+      </div>
+    </div>
+    <div class="tier-bar"><div class="tier-fill" id="tierFill"></div></div>
+    <div class="tier-foot">
+      <span id="tierProgress" class="faint">Reach the next tier to unlock a new badge.</span>
+      <span id="tierNext" class="gold-text"></span>
+    </div>
+    <div class="tier-badges" id="tierBadges"></div>
+  </div>
+</section>
+
+<!-- ============================== LEADERBOARD ============================== -->
+<section class="wrap" id="leaderboard">
+  <div class="section-head">
+    <h2>Top Speculators</h2>
+    <p class="muted">Real-time standings across the whole market.</p>
+  </div>
+  <div class="card board">
+    <table class="board-table">
+      <thead><tr><th>#</th><th>Speculator</th><th class="num">Biggest win</th><th class="num">Balance</th></tr></thead>
+      <tbody id="boardBody">
+        <tr><td colspan="4" class="center faint" style="padding:26px">Loading standings…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="brand">
+      <img src="/club.svg" alt="" />
+      <div><b>Genies <span>Speculation</span></b><small>Play-money market sim</small></div>
+    </div>
+    <p class="faint">
+      Genies Speculation Market is a <b>simulation</b>. Every wager uses virtual Genies Gold with
+      <b>no monetary value</b> and no way to deposit or cash out. Built for entertainment.
+      Accounts are stored locally on this machine.
+    </p>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+<script src="/js/lobby.js"></script>
+</body>
+</html>

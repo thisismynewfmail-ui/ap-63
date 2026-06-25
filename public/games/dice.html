@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0e17" />
+<title>Speculator Dice — Genies Speculation Market</title>
+<link rel="icon" href="/club.svg" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/games.css" />
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+
+<main class="game-shell">
+  <a class="game-back" href="/">← Back to the floor</a>
+  <div class="game-header">
+    <span class="gh-icon">🎲</span>
+    <div><h1>Speculator Dice</h1></div>
+  </div>
+  <p class="game-sub">Roll under your target on a 0–99.99 scale. Drag the slider to set your own odds and payout.</p>
+
+  <div class="stage">
+    <div class="roll-result" id="rollResult">—</div>
+    <div class="result-line" id="result">Set a target and roll.</div>
+    <div class="roll-track" style="margin-top:8px">
+      <div class="roll-marker" id="marker" style="left:0%"></div>
+    </div>
+    <div class="row between" style="width:100%;font-size:.78rem;color:var(--text-faint);font-weight:700">
+      <span>0</span><span>Roll UNDER <b id="targetLabel" class="gold-text">50.00</b> to win</span><span>100</span>
+    </div>
+  </div>
+
+  <div class="wager" style="margin-bottom:16px">
+    <div class="wager-row" style="margin-bottom:6px">
+      <span class="wager-label">Roll under (target)</span>
+      <span style="margin-left:auto;font-weight:900;font-size:1.1rem" class="gold-text" id="targetVal">50.00</span>
+    </div>
+    <input type="range" id="targetSlider" min="2" max="98" step="1" value="50" class="slider" />
+    <div class="mini-stats" style="margin-top:14px">
+      <div class="mini-stat"><div class="k">Win chance</div><div class="v win-text" id="winChance">50%</div></div>
+      <div class="mini-stat"><div class="k">Payout</div><div class="v gold-text" id="payoutMult">1.98×</div></div>
+    </div>
+  </div>
+
+  <div id="wagerMount"></div>
+</main>
+
+<script src="/js/app.js"></script>
+<script src="/js/game-shell.js"></script>
+<script src="/js/games/dice.js"></script>
+</body>
+</html>
