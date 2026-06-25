@@ -1,13 +1,9 @@
 {
   "name": "genies-speculation-market",
   "version": "1.0.0",
-  "description": "A local play-money speculation market simulator with JSON-backed accounts, a Genies Gold points system, and five mobile-friendly games.",
-  "main": "server.js",
+  "description": "Local play-money speculation market simulator. Run with: python3 server.py",
   "scripts": {
-    "start": "node server.js"
-  },
-  "engines": {
-    "node": ">=18"
+    "start": "python3 server.py"
   },
   "license": "MIT",
   "private": true

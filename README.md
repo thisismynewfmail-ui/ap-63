@@ -12,13 +12,15 @@ deposited, purchased, or cashed out. It's a self-contained entertainment sim.
 
 ## Quick start
 
-No dependencies. You just need Node.js (v18+):
+No dependencies — just Python 3.8+:
 
 ```bash
-npm start          # or: node server.js
+python3 server.py            # default port 3000
+python3 server.py 8080       # custom port
 ```
 
-Then open **http://localhost:3000**.
+Then open the address printed in the terminal.  The server binds to `0.0.0.0`
+so any device on your local network can reach it at the **Network →** address.
 
 Sign up (you get **1,000 Genies Gold** free), claim your daily **+250** drop,
 and play. Accounts and balances persist locally in `data/accounts.json`.
@@ -61,7 +63,7 @@ free daily drop and starting stack keep the play money flowing.
 ## Project layout
 
 ```
-server.js               Zero-dependency Node HTTP server + JSON API
+server.py               Zero-dependency Python 3 HTTP server + JSON API
 data/accounts.json      Local account & points store (seeded empty)
 public/
   index.html            Lobby
